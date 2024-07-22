@@ -51,6 +51,9 @@ COPY run_nimble_miner.sh /usr/src/app/run_nimble_miner.sh
 # Copy the required files from the build stage
 COPY --from=build /usr/src/app/nimble-miner /usr/src/app/nimble-miner
 
+# Ensure the script is executable
+RUN chmod +x /usr/src/app/run_nimble_miner.sh
+
 # Set the working directory
 WORKDIR /usr/src/app/nimble-miner
 
